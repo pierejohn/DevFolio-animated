@@ -27,7 +27,7 @@ body {
 
     font-family: var(--default-font);
   
-    background-color: #afacac;
+    background-color: #ffffff;
     box-sizing: border-box !important;
     /* overflow: hidden; */
 
@@ -216,7 +216,8 @@ cursor: pointer;
 }
 
 .home {
-    background-image: url(images/intro-bg.jpg);
+    background-image: url(../images/intro-bg.jpg);
+    /* background-color: red; */
     background-position: center center;
     background-size: cover;
     height: 100vh;
@@ -414,7 +415,8 @@ cursor: pointer;
     width: 100%;
     height: 50vh;
     background-position: center center;
-    background-image: url(images/post-3.jpg);
+  
+    background-image: url(../images/post-3.jpg);
 }
 
 .layout-blue {
@@ -548,7 +550,7 @@ cursor: pointer;
     margin-top: 50px;
     width: 100%;
     height: 50vh;
-    background-image: url(images/testimonials-bg.jpg);
+    background-image: url(../images/testimonials-bg.jpg);
     background-position: center center;
     background-size: cover;
 
