@@ -1,0 +1,814 @@
+:root {
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+    --background-color: #060606;
+    --bs-progress-height: 1px;
+    --gray-color: #686767;
+    --blue-color: #0078ff;
+    --default-color: #4e4e4e;
+    
+}
+
+* {
+
+    box-sizing: border-box !important;
+    scroll-behavior: inherit ;
+     /* scroll-margin-top: 75px;  */
+     
+}
+
+p {
+    margin-bottom: 0.3rem !important;
+}
+
+body {
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+
+    font-family: var(--default-font);
+  
+    background-color: #afacac;
+    box-sizing: border-box !important;
+    /* overflow: hidden; */
+
+}
+.scrollUp
+{
+
+height: 50px;
+width: 50px;
+background-color: var(--blue-color);
+position: fixed;
+bottom: 50px;
+right: 50px;
+display: none;
+cursor: pointer;
+
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 35px;
+  aspect-ratio: 1;
+  --c:no-repeat linear-gradient(#046D8B 0 0);
+  background:
+    var(--c) 0 0,
+    var(--c) 100% 0,
+    var(--c) 100% 100%,
+    var(--c) 0 100%;
+  animation: 
+    l2-1 2s infinite,
+    l2-2 2s infinite;
+}
+@keyframes l2-1 {
+  0%   {background-size: 0    4px,4px 0   ,0    4px,4px 0   }
+  12.5%{background-size: 100% 4px,4px 0   ,0    4px,4px 0   }
+  25%  {background-size: 100% 4px,4px 100%,0    4px,4px 0   }
+  37.5%{background-size: 100% 4px,4px 100%,100% 4px,4px 0   }
+  45%,
+  55%  {background-size: 100% 4px,4px 100%,100% 4px,4px 100%}
+  62.5%{background-size: 0    4px,4px 100%,100% 4px,4px 100%}
+  75%  {background-size: 0    4px,4px 0   ,100% 4px,4px 100%}
+  87.5%{background-size: 0    4px,4px 0   ,0    4px,4px 100%}
+  100% {background-size: 0    4px,4px 0   ,0    4px,4px 0   }
+}
+@keyframes l2-2 {
+  0%,49.9%{background-position: 0 0   ,100% 0   ,100% 100%,0 100%}
+  50%,100%{background-position: 100% 0,100% 100%,0    100%,0 0   }
+}
+.loading{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #0078ff;
+    z-index: 999999999;
+    overflow: hidden;
+}
+/* .............................nav......................................*/
+.navbar
+{
+    background-color: black;
+    transition: 0.3s;
+   
+}
+.navbar-brand h1 {
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--heading-color) #ffffff;
+}
+
+.navbar-nav a {
+
+    position: relative;
+    color: white;
+    font-size: 15px;
+    font-family: var(--nav-font);
+    overflow: hidden;
+
+
+}
+#DevFolio{
+    color: white;
+}
+.navbar-nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    bottom: 0;
+    right: 100%;
+    transition: right 0.5s;
+}
+
+.navbar-nav-black a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    bottom: 0;
+    right: 100%;
+    transition: right 0.5s;
+}
+.navbar-nav-white a::before {
+   content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    bottom: 0;
+    right: 0 !important;
+}
+.navbar-nav-active-black a::before {
+   content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    bottom: 0;
+    right: 0 !important;
+}
+
+
+
+.active-nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    bottom: 0;
+    right: 0 !important;
+
+
+}
+.active-nav-black a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    bottom: 0;
+    right: 0 !important;
+
+
+}
+
+.navbar-nav a:hover {
+    color: rgb(255, 255, 255);
+
+}
+
+/* .navbar-nav a:hover::before {
+
+    bottom: 0;
+    right: 0;
+
+} */
+
+/* .............................................home.......................... */
+.home {
+    color: white;
+}
+
+.overlay-bg-home {
+    background: color-mix(in srgb, var(--background-color), transparent 30%);
+    height: 100vh;
+
+}
+
+.overlay-bg-home h2 {
+    font-size: 64px;
+    font-weight: 700;
+
+}
+
+.home {
+    background-image: url(images/intro-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.typewrite {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* .............................about....................................... */
+
+.remove-list-style {
+    list-style: none;
+
+}
+
+.about-info {
+    margin: 20px 0;
+    color: var(--gray-color);
+
+}
+
+.paragraph-defult {
+    color: var(--gray-color);
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.paragraph-about p {
+    margin: 20px 0;
+}
+
+.progress,
+.progress-stacked {
+    --bs-progress-height: 0.5rem !important;
+    overflow: visible !important;
+}
+
+#About ul {
+    padding-left: 0;
+}
+
+#About h4 {
+    font-size: 28px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+}
+
+#About h4::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--blue-color) !important;
+}
+
+/* ..................................resume............... */
+.blue-under-line h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 1vw;
+
+}
+
+.blue-under-line h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: var(--blue-color);
+    bottom: 0;
+    right: 0;
+    transform: translateX(-50%);
+
+}
+
+.resume h3 {
+    color: #0a090f;
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sumary-heding {
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color:
+        color-mix(in srgb, var(--gray-color), transparent 20%);
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.sumary-heding::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 100%;
+    border: var(--blue-color) 2px solid;
+    left: 0;
+    transform: translateX(-150%);
+
+}
+
+.resume-date {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 15px;
+}
+
+.sumary-card {
+    border-left: var(--blue-color) 2px solid;
+    padding-left: 14px;
+}
+
+.paragraph-defult li {
+    margin-bottom: 10px;
+}
+
+/* ...................................services...............  */
+.Services-card h3 {
+    font-weight: 700;
+    margin: 10px 0 15px 0;
+    font-size: 22px;
+
+}
+
+.Services-card {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.Services-card p {
+    color: var(--gray-color);
+}
+
+.services-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: var(--blue-color);
+}
+
+.services-icon i {
+    font-size: 1.5rem;
+}
+
+.bor-hov-bo {
+
+    border-bottom: none;
+    transition: 0.3s;
+}
+
+.Services-card:hover .bor-hov-bo {
+
+    margin-bottom: -5px;
+    border-bottom: var(--blue-color) 5px solid;
+}
+
+.Services-card:hover {
+    transform: translateY(-5%);
+
+}
+
+.Services-card:hover {
+    transform: translateY(-5%);
+
+}
+
+.services-heading {
+    transition: 0.3s;
+}
+
+.Services-card:hover .services-heading {
+    color: var(--blue-color);
+}
+
+.Services-100 {
+    width: 100%;
+    height: 50vh;
+    background-position: center center;
+    background-image: url(images/post-3.jpg);
+}
+
+.layout-blue {
+    width: 100%;
+    height: 100%;
+    background-color: #0077ffa6;
+}
+
+.Services-100 h2 {
+    font-size: 3rem;
+}
+
+.Services-100 p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.623);
+
+}
+
+/* ..........................................Portfolio................................. */
+.Portfolio-menu {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.623);
+
+}
+
+.Portfolio-menu a {
+
+    color: rgba(0, 0, 0, 0.712);
+    transition: 0.5s;
+
+}
+
+.Portfolio-menu a:hover {
+
+    color: var(--blue-color);
+
+}
+
+.over-card {
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffffea;
+    width: 80%;
+    padding: 10px 25px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.Portfolio-card:hover .over-card {
+    bottom: 10%;
+    opacity: 1;
+
+
+}
+
+.dodet-boerder {
+    border-bottom: 1px var(--gray-color) dashed;
+}
+
+.dodet-boerder h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dodet-boerder h4 {
+    font-family: "Raleway", sans-serif;
+    color: var(--blue-color);
+    font-weight: 500;
+    line-height: 1.2;
+
+}
+
+.Questions-left h2 {
+    font-weight: 400;
+    font-size: 34px;
+}
+
+.Questions-left strong {
+    font-weight: bolder;
+}
+
+.Questions-left p {
+    font-size: 15px;
+    color:
+        color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.accordion-collapse {
+    transition: 1s !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--blue-color) !important;
+    background-color: white !important;
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+
+.accordion-item {
+
+    border: none !important;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.paragraph-portofolio {
+    color: var(--gray-color);
+    padding-top: none;
+}
+
+.accordion-button:hover {
+    color: var(--blue-color);
+}
+
+.accordion-button span {
+    color: var(--blue-color);
+
+}
+
+.accordion-button {
+    box-shadow: none !important;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+
+}
+
+.portofolio-carusel
+{
+    margin-top: 50px;
+    width: 100%;
+    height: 50vh;
+    background-image: url(images/testimonials-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+
+}
+.carousel-item img
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#carouselExampleCaptions .carousel-indicators button
+{
+  
+  width: 12px !important;
+  height: 32px !important;
+  border-radius: 50%;
+  background-color: #ffffff;  
+}
+.portofolio-carusel .container
+{
+    height: 100%;
+}
+.portofolio-name
+{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+.portofolio-job{
+font-size: 14px;
+    margin: 0 0 15px 0;
+    color: 
+ color-mix(in srgb, #ffffff, transparent 40%);
+}
+.icons-stars{
+    color: gold;
+    margin-bottom: 15px;
+}
+.fa-quote-left , .fa-quote-right
+{
+    color: 
+ color-mix(in srgb, #ffffff, transparent 40%);
+    font-size: 26px;
+    line-height: 0;
+}
+.carousel-indicators
+{
+    bottom: 10% !important;
+}
+.carousel-inner
+{
+    padding: 0 50px;
+}
+/* ...........................................contact................................. */
+.contact-item h3
+{
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+}
+.contact-item p
+{
+        padding: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+.contact-icon
+{
+    margin-right: 10px;
+    width:50px;
+    height: 50px;
+    border: var(--blue-color) 1px solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.contact-icon i
+{
+    font-size: 1rem;
+    color: var(--blue-color);
+    transition: 0.5s;
+}
+.contact-item a
+{
+    text-decoration: none;
+    color: black;
+    
+}
+.contact-item .d-flex:hover i
+{
+    color: white;
+
+}
+.contact-item .d-flex:hover .contact-icon
+{
+    background-color: var(--blue-color);
+
+}
+.form-control
+{
+border: solid #acacac59 0.1px !important;
+}
+
+
+.Contact input::placeholder {
+  color: #acacac59 !important;
+}
+
+.Contact textarea::placeholder {
+  color: #acacac59 !important;
+}
+.Contact .btn
+{
+    background-color: var(--blue-color);
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+}
+.Contact .btn:hover
+{
+    background-color: #0077ff94;
+    color: white;
+
+
+}
+
+.My-shadow
+{
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+/* .................................................footer-of-page......................... */
+.footer-of-page
+{
+    width: 100%;
+    height: 25vh;
+    background-color: var(--blue-color);
+}
+.footer-icons
+{
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer-icons a
+
+{
+    text-decoration: none !important;
+    color: #fff;
+    font-size: 1.5rem;
+
+}
+
+/* ..............................................changeColor...................................  */
+
+.changeColor
+{
+    
+    /* height: 120px; */
+    position: absolute;
+    top: 200px;
+}
+.setting
+{
+    background-color: #06343f;
+    padding: 20px;
+    
+    
+}
+.changeColor .palete span
+{
+    width: 50px;
+    height: 50px;
+    background-color: #0078ff;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 3px;
+    
+}
+.settingsIcon
+{
+    font-size: 2rem;
+    background-color: #06343f;
+    height: fit-content;
+    padding:0 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* ...............lg.................. */
+
+@media (max-width: 1199.98px) {
+
+
+
+    /* ........md...... */
+
+}
+
+@media (max-width: 991.98px) {
+
+    .sernices-item {
+        width: 50%;
+    }
+
+}
+
+/* ..............sm............. */
+@media (max-width: 767.98px) {
+    .sernices-item {
+        width: 100%;
+    }
+
+    .Questions-left {
+        padding-left: 0;
+    }
+    .carousel-item
+    {
+    height:  10% !important;
+    display: block !important;
+    }
+    .portofolio-carusel
+{
+    
+    
+    height: 80vh;
+   
+
+}
+.carousel-indicators
+{
+    bottom: 10% !important;
+}
+.carousel-inner
+{
+    padding: 0 0px;
+}
+.changeColor .palete span
+{
+    width: 20px;
+    height: 20px;}
+
+    .settingsIcon
+{
+    font-size: 1rem;
+    padding:0px;
+
+}
+}
